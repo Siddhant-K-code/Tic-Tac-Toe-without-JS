@@ -1,0 +1,492 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Tic-Tac-Toe without JS</title>
+
+
+<div class="game">
+    <form>
+        <div class="board"><svg class="board__line" style="--x: 1; --y: 0;"><path d="M 5 5 L 295 5" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="300" stroke-dashoffset="300"></path></svg><svg class="board__line" style="--x: 2; --y: 0;"><path d="M 5 5 L 295 5" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="300" stroke-dashoffset="300"></path></svg>
+            <svg
+                class="board__line" style="--x: 0; --y: 1;">
+                <path d="M 5 5 L 295 5" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="300" stroke-dashoffset="300"></path>
+                </svg><svg class="board__line" style="--x: 0; --y: 2;"><path d="M 5 5 L 295 5" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="300" stroke-dashoffset="300"></path></svg><input type="checkbox" id="x--0" style="--col: 0; --row: 0;"
+                /><span style="--col: 0; --row: 0;"><svg class="x"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></span><input
+                    type="checkbox" id="o--0" style="--col: 0; --row: 0;" /><span style="--col: 0; --row: 0;"><svg class="o"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></span><input
+                    type="checkbox" id="x--1" style="--col: 1; --row: 0;" /><span style="--col: 1; --row: 0;"><svg class="x"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></span><input
+                    type="checkbox" id="o--1" style="--col: 1; --row: 0;" /><span style="--col: 1; --row: 0;"><svg class="o"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></span><input
+                    type="checkbox" id="x--2" style="--col: 2; --row: 0;" /><span style="--col: 2; --row: 0;"><svg class="x"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></span><input
+                    type="checkbox" id="o--2" style="--col: 2; --row: 0;" /><span style="--col: 2; --row: 0;"><svg class="o"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></span><input
+                    type="checkbox" id="x--3" style="--col: 0; --row: 1;" /><span style="--col: 0; --row: 1;"><svg class="x"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></span><input
+                    type="checkbox" id="o--3" style="--col: 0; --row: 1;" /><span style="--col: 0; --row: 1;"><svg class="o"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></span><input
+                    type="checkbox" id="x--4" style="--col: 1; --row: 1;" /><span style="--col: 1; --row: 1;"><svg class="x"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></span><input
+                    type="checkbox" id="o--4" style="--col: 1; --row: 1;" /><span style="--col: 1; --row: 1;"><svg class="o"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></span><input
+                    type="checkbox" id="x--5" style="--col: 2; --row: 1;" /><span style="--col: 2; --row: 1;"><svg class="x"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></span><input
+                    type="checkbox" id="o--5" style="--col: 2; --row: 1;" /><span style="--col: 2; --row: 1;"><svg class="o"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></span><input
+                    type="checkbox" id="x--6" style="--col: 0; --row: 2;" /><span style="--col: 0; --row: 2;"><svg class="x"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></span><input
+                    type="checkbox" id="o--6" style="--col: 0; --row: 2;" /><span style="--col: 0; --row: 2;"><svg class="o"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></span><input
+                    type="checkbox" id="x--7" style="--col: 1; --row: 2;" /><span style="--col: 1; --row: 2;"><svg class="x"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></span><input
+                    type="checkbox" id="o--7" style="--col: 1; --row: 2;" /><span style="--col: 1; --row: 2;"><svg class="o"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></span><input
+                    type="checkbox" id="x--8" style="--col: 2; --row: 2;" /><span style="--col: 2; --row: 2;"><svg class="x"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></span><input
+                    type="checkbox" id="o--8" style="--col: 2; --row: 2;" /><span style="--col: 2; --row: 2;"><svg class="o"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></span>
+                <label
+                    for="x--0" style="--col: 0; --row: 0;"></label><label for="o--0" style="--col: 0; --row: 0;"></label><label for="x--1" style="--col: 1; --row: 0;"></label><label for="o--1" style="--col: 1; --row: 0;"></label><label for="x--2" style="--col: 2; --row: 0;"></label><label for="o--2"
+                        style="--col: 2; --row: 0;"></label><label for="x--3" style="--col: 0; --row: 1;"></label><label for="o--3" style="--col: 0; --row: 1;"></label><label for="x--4" style="--col: 1; --row: 1;"></label><label for="o--4" style="--col: 1; --row: 1;"></label>
+                    <label
+                        for="x--5" style="--col: 2; --row: 1;"></label><label for="o--5" style="--col: 2; --row: 1;"></label><label for="x--6" style="--col: 0; --row: 2;"></label><label for="o--6" style="--col: 0; --row: 2;"></label><label for="x--7" style="--col: 1; --row: 2;"></label>
+                        <label
+                            for="o--7" style="--col: 1; --row: 2;"></label><label for="x--8" style="--col: 2; --row: 2;"></label><label for="o--8" style="--col: 2; --row: 2;"></label>
+                            <div class="board__result board__result--x result">
+                                <dl class="result__content"><dt class="result__title">Winner!</dt>
+                                    <dd class="result__details"><svg class="x result__icon"><path class="cross" d="M 20 20 L 80 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path><path class="cross" d="M 80 20 L 20 80" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></path></svg></dd>
+                                    <button
+                                        class="result__reset" type="reset">Play again</button>
+                                </dl>
+                                <div class="result__firework-icon" style="--y: 320; --r: 208;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 396; --r: 87;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 452; --r: 357;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 444; --r: 1;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 438; --r: 154;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 471; --r: 24;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 394; --r: 118;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 385; --r: 284;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 400; --r: 249;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 318; --r: 220;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 213; --r: 58;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 477; --r: 355;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 383; --r: 118;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 260; --r: 101;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 308; --r: 268;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 217; --r: 339;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 446; --r: 83;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 349; --r: 189;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 406; --r: 236;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 319; --r: 64;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 211; --r: 4;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 286; --r: 118;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 424; --r: 327;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 384; --r: 326;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 473; --r: 180;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 336; --r: 329;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 458; --r: 152;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 281; --r: 268;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 227; --r: 214;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 490; --r: 46;">🎉</div>
+                            </div>
+                            <div class="board__result board__result--o result">
+                                <dl class="result__content"><dt class="result__title">Winner!</dt>
+                                    <dd class="result__details"><svg class="o result__icon"><circle class="naught" cx="50" cy="50" r="30" fill="none" stroke-width="10" stroke-dasharray="200" stroke-dashoffset="200" stroke-linecap="round"></circle></svg></dd><button class="result__reset"
+                                        type="reset">Play again</button></dl>
+                                <div class="result__firework-icon" style="--y: 257; --r: 71;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 201; --r: 29;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 490; --r: 352;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 267; --r: 277;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 449; --r: 27;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 276; --r: 354;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 427; --r: 74;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 417; --r: 40;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 316; --r: 280;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 456; --r: 48;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 282; --r: 126;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 491; --r: 33;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 211; --r: 158;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 304; --r: 69;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 252; --r: 266;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 475; --r: 26;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 404; --r: 299;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 304; --r: 240;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 201; --r: 166;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 241; --r: 165;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 432; --r: 110;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 209; --r: 70;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 427; --r: 201;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 289; --r: 237;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 213; --r: 17;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 230; --r: 174;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 240; --r: 76;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 224; --r: 99;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 310; --r: 358;">🎉</div>
+                                <div class="result__firework-icon" style="--y: 238; --r: 210;">🎉</div>
+                            </div>
+                            <div class="board__result board__result--draw">
+                                <dl class="result__content"><dt class="result__title">Draw!</dt>
+                                    <dd class="result__details">
+                                        <div class="result__emoji">😭</div>
+                                    </dd><button class="result__reset" type="reset">Play again</button></dl>
+                            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+  * {
+  box-sizing: border-box;
+}
+body,
+html {
+  align-items: center;
+  background-color: #1f3a93;
+  color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+svg {
+  height: 100px;
+  width: 100px;
+}
+input {
+  opacity: 0;
+}
+label {
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  z-index: 2;
+}
+input,
+span,
+label {
+  left: calc(var(--col) * 100px);
+  position: absolute;
+  top: calc(var(--row) * 100px);
+}
+circle,
+path {
+  animation-fill-mode: forwards;
+  animation-name: draw;
+}
+circle {
+  animation-duration: 0.5s;
+  stroke: #f62459;
+}
+path {
+  animation-duration: 0.25s;
+  stroke: #36dbd7;
+}
+button {
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  padding: 8px 24px;
+  border-radius: 4px;
+  border: 0;
+  background: #1f3a93;
+  font-size: 0.75rem;
+  color: #fafafa;
+  filter: drop-shadow(0 5px 5px #000);
+  transition: transform 0.1s, filter 0.1s;
+}
+button:hover {
+  filter: drop-shadow(0 5px 4px #000);
+  transform: translateY(1px);
+}
+button:active {
+  transform: translateY(5px);
+  filter: drop-shadow(0 0 0 transparent);
+}
+span {
+  display: none;
+  transform: translate3d(0, 0, 3px);
+}
+input:checked + span {
+  display: block;
+}
+.o {
+  transform: rotateY(180deg) rotate(-35deg);
+}
+.x path:nth-of-type(2) {
+  animation-delay: 0.25s;
+}
+.board {
+  height: 300px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  width: 300px;
+}
+.board__line {
+  height: 10px;
+  left: calc(var(--x) * 100px);
+  position: absolute;
+  top: calc(var(--y) * 100px);
+  width: 300px;
+}
+.board__line path {
+  stroke: #fafafa;
+}
+.board__line:nth-of-type(1),
+.board__line:nth-of-type(2) {
+  transform: rotate(90deg) translate(-5px, 0);
+  transform-origin: left center;
+}
+.board__line:nth-of-type(3),
+.board__line:nth-of-type(4) {
+  transform: translate(0, -50%);
+}
+.board__line:nth-of-type(1) path {
+  animation-delay: 0.25s;
+}
+.board__line:nth-of-type(2) path {
+  animation-delay: 0.5s;
+}
+.board__line:nth-of-type(3) path {
+  animation-delay: 0.75s;
+}
+.board__line:nth-of-type(4) path {
+  animation-delay: 1s;
+}
+.board__result {
+  animation: fadeBg 0.25s 0.5s;
+  animation-fill-mode: backwards;
+  background: #1f3a93;
+  display: none;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  transform: translate3d(0, 0, 4px);
+  width: 100%;
+}
+.result__content {
+  align-items: center;
+  animation: flyIn 0.25s 0.75s;
+  animation-fill-mode: backwards;
+  background: #fafafa;
+  border-radius: 10px;
+  color: #1f3a93;
+  display: flex;
+  filter: drop-shadow(0 10px 10px #000);
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+.result__title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.result__details {
+  margin: 0;
+}
+.result__shield {
+  animation: fadeBg 0.25s 0.5s;
+  animation-fill-mode: backwards;
+  background: #1f3a93;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.result__emoji {
+  font-size: 5rem;
+}
+.result__icon path:nth-of-type(1) {
+  animation-delay: 1s;
+}
+.result__icon path:nth-of-type(2) {
+  animation-delay: 1.4s;
+}
+.result__icon circle {
+  animation-delay: 1s;
+}
+.result__firework-icon {
+  animation: fly 0.75s 1s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(0, 0.64, 0.25, 1.01);
+  font-size: 2rem;
+  height: 2rem;
+  left: 50%;
+  margin-left: -1rem;
+  margin-top: -1rem;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(calc(var(--r) * 1deg)) translateY(calc(var(--y) * -1px));
+  width: 2rem;
+}
+:checked ~ label:nth-of-type(odd),
+:checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+:checked ~ :checked ~ label:nth-of-type(even),
+:checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even) {
+  transform: translate3d(0, 0, 2px);
+}
+:checked ~ label:nth-of-type(even),
+:checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+:checked ~ :checked ~ label:nth-of-type(odd),
+:checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd) {
+  transform: translate3d(0, 0, -1px);
+}
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board__result--draw {
+  display: block;
+}
+#x--0:checked ~ #x--1:checked ~ #x--2:checked ~ .board__result--x,
+#x--3:checked ~ #x--4:checked ~ #x--5:checked ~ .board__result--x,
+#x--6:checked ~ #x--7:checked ~ #x--8:checked ~ .board__result--x,
+#x--0:checked ~ #x--3:checked ~ #x--6:checked ~ .board__result--x,
+#x--1:checked ~ #x--4:checked ~ #x--7:checked ~ .board__result--x,
+#x--2:checked ~ #x--5:checked ~ #x--8:checked ~ .board__result--x,
+#x--0:checked ~ #x--4:checked ~ #x--8:checked ~ .board__result--x,
+#x--2:checked ~ #x--4:checked ~ #x--6:checked ~ .board__result--x,
+#o--0:checked ~ #o--1:checked ~ #o--2:checked ~ .board__result--o,
+#o--3:checked ~ #o--4:checked ~ #o--5:checked ~ .board__result--o,
+#o--6:checked ~ #o--7:checked ~ #o--8:checked ~ .board__result--o,
+#o--0:checked ~ #o--3:checked ~ #o--6:checked ~ .board__result--o,
+#o--1:checked ~ #o--4:checked ~ #o--7:checked ~ .board__result--o,
+#o--2:checked ~ #o--5:checked ~ #o--8:checked ~ .board__result--o,
+#o--0:checked ~ #o--4:checked ~ #o--8:checked ~ .board__result--o,
+#o--2:checked ~ #o--4:checked ~ #o--6:checked ~ .board__result--o {
+  display: block;
+}
+#x--0:checked ~ #x--1:checked ~ #x--2:checked ~ .board__result--x ~ .board__result--draw,
+#x--3:checked ~ #x--4:checked ~ #x--5:checked ~ .board__result--x ~ .board__result--draw,
+#x--6:checked ~ #x--7:checked ~ #x--8:checked ~ .board__result--x ~ .board__result--draw,
+#x--0:checked ~ #x--3:checked ~ #x--6:checked ~ .board__result--x ~ .board__result--draw,
+#x--1:checked ~ #x--4:checked ~ #x--7:checked ~ .board__result--x ~ .board__result--draw,
+#x--2:checked ~ #x--5:checked ~ #x--8:checked ~ .board__result--x ~ .board__result--draw,
+#x--0:checked ~ #x--4:checked ~ #x--8:checked ~ .board__result--x ~ .board__result--draw,
+#x--2:checked ~ #x--4:checked ~ #x--6:checked ~ .board__result--x ~ .board__result--draw,
+#o--0:checked ~ #o--1:checked ~ #o--2:checked ~ .board__result--o ~ .board__result--draw,
+#o--3:checked ~ #o--4:checked ~ #o--5:checked ~ .board__result--o ~ .board__result--draw,
+#o--6:checked ~ #o--7:checked ~ #o--8:checked ~ .board__result--o ~ .board__result--draw,
+#o--0:checked ~ #o--3:checked ~ #o--6:checked ~ .board__result--o ~ .board__result--draw,
+#o--1:checked ~ #o--4:checked ~ #o--7:checked ~ .board__result--o ~ .board__result--draw,
+#o--2:checked ~ #o--5:checked ~ #o--8:checked ~ .board__result--o ~ .board__result--draw,
+#o--0:checked ~ #o--4:checked ~ #o--8:checked ~ .board__result--o ~ .board__result--draw,
+#o--2:checked ~ #o--4:checked ~ #o--6:checked ~ .board__result--o ~ .board__result--draw {
+  display: none;
+}
+@-moz-keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-o-keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-moz-keyframes fadeBg {
+  from {
+    background: rgba(31,58,147,0);
+  }
+}
+@-webkit-keyframes fadeBg {
+  from {
+    background: rgba(31,58,147,0);
+  }
+}
+@-o-keyframes fadeBg {
+  from {
+    background: rgba(31,58,147,0);
+  }
+}
+@keyframes fadeBg {
+  from {
+    background: rgba(31,58,147,0);
+  }
+}
+@-moz-keyframes fly {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  5%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fly {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  5%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes fly {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  5%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fly {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  5%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes flyIn {
+  from {
+    transform: translateY(100%) scale(0);
+  }
+}
+@-webkit-keyframes flyIn {
+  from {
+    transform: translateY(100%) scale(0);
+  }
+}
+@-o-keyframes flyIn {
+  from {
+    transform: translateY(100%) scale(0);
+  }
+}
+@keyframes flyIn {
+  from {
+    transform: translateY(100%) scale(0);
+  }
+}
+
+</style>
